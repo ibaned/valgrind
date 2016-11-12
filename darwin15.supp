@@ -759,3 +759,21 @@ macos-__pthread_rwlock_init-see-our-bug-196528
 Memcheck:Cond
 fun:pthread_rwlock_init
 }
+
+{
+   dan-1
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   ...
+   fun:_read_images
+}
+
+{
+   dan-2
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_?alloc
+   ...
+   fun:gc_init
+}
