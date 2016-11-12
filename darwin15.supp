@@ -779,7 +779,6 @@ fun:pthread_rwlock_init
    ...
 }
 
-# some of these were definite ! Apple, whats the deal ?
 {
    dan-scanf
    Memcheck:Leak
@@ -842,7 +841,6 @@ fun:pthread_rwlock_init
    ...
 }
 
-#another definite leak ! omg !
 {
    dan-tlv_allocate_blah
    Memcheck:Leak
@@ -859,3 +857,22 @@ fun:pthread_rwlock_init
    fun:strtold_l
    ...
 }
+
+{
+   dan-read_images
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:calloc
+   ...
+   fun:_read_images
+}
+
+{
+   dan-gc_init
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_?alloc
+   ...
+   fun:gc_init
+}
+
