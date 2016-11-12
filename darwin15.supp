@@ -799,7 +799,6 @@ fun:pthread_rwlock_init
 {
    dan-dispatch_once_f
    Memcheck:Leak
-   match-leak-kinds: reachable
    ...
    fun:dispatch_once_f
    ...
@@ -808,7 +807,6 @@ fun:pthread_rwlock_init
 {
    dan-gethostbyname
    Memcheck:Leak
-   match-leak-kinds: reachable
    ...
    fun:gethostbyname
    ...
@@ -817,7 +815,6 @@ fun:pthread_rwlock_init
 {
    dan-call_load_methods
    Memcheck:Leak
-   match-leak-kinds: reachable
    ...
    fun:call_load_methods
    ...
