@@ -777,3 +777,21 @@ fun:pthread_rwlock_init
    ...
    fun:gc_init
 }
+
+{
+   dan-3
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:tlv_allocate_and_initialize_for_key
+   ...
+}
+
+{
+   dan-4
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:atexit_register
+   ...
+}
